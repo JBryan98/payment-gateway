@@ -1,4 +1,5 @@
 Feature: Shopping mother elephant
+    #Con skip le indicamos a cypress que ignore este scenario
     @skip
     Scenario: Shopping mother elphant with babies
         Given The source web page is operative

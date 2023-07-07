@@ -5,13 +5,13 @@ interface PageObjects {
 }
 
 class MenuPage {
-  elements: PageObjects = {
+  private elements: PageObjects = {
     linkGenerateCardNumber: () => cy.get("#nav > a:nth-child(2)"),
     cboxQuantity: () => cy.get('select[name="quantity"]'),
     btnBuyNow: () => cy.get('input[value="Buy Now"]'),
   };
 
-  clickGenerateCardNumber(): void {
+  public clickGenerateCardNumber(): void {
     this.elements
       .linkGenerateCardNumber()
       .invoke("removeAttr", "target")
@@ -19,7 +19,7 @@ class MenuPage {
   }
 
   //Si quantity fuese number, el metodo select() en lugar del texto del combobox, tomaría el index
-  selectQuantity(quantity: string): void {
+  public selectQuantity(quantity: string): void {
     this.elements
       .cboxQuantity()
       .select(quantity)
@@ -27,7 +27,7 @@ class MenuPage {
       .should("eq", quantity);
   }
 
-  clickBuyNow(): void {
+  public clickBuyNow(): void {
     this.elements.btnBuyNow().click();
   }
 }

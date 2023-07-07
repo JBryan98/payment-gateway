@@ -8,7 +8,7 @@ interface PageObjects {
 }
 
 class PaymentPage {
-  elements: PageObjects = {
+  private elements: PageObjects = {
     inputCardNumber: () => cy.get("#card_nmuber"),
     cboxExpMonth: () => cy.get("#month"),
     cboxYear: () => cy.get("#year"),
